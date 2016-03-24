@@ -1,0 +1,7 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    failure:
+      invalid_token: "Invalid authentication token."
+      expired_token: "Authentication token has already expired."
