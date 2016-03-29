@@ -15,7 +15,7 @@ module DeviseJwt
           end
     DESC
 
-    CONTROLLERS = %w(confirmations passwords registrations sessions refresh_token).freeze
+    CONTROLLERS = %w(confirmations passwords registrations sessions).freeze
 
     source_root File.expand_path('../templates/controllers', __FILE__)
 

@@ -2,4 +2,8 @@ class <%= @scope_prefix %>ConfirmationsController < DeviseJwt::ConfirmationsCont
   # def create
   #   super
   # end
+
+  # def show
+  #   super
+  # end
 end

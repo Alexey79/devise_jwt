@@ -3,8 +3,8 @@
 en:
   devise_jwt:
     failure:
-      invalid_token: "Invalid authentication token."
-      expired_token: "Authentication token has already expired."
+      invalid_token: 'Invalid authentication token.'
+      expired_token: 'Authentication token has already expired.'
     sessions:
       signed_out: 'You has been successfully signed out.'
     registrations:
@@ -13,6 +13,10 @@ en:
       missing_email: 'You must enter email address.'
       missing_password: "You must enter 'Password'."
       missing_password_confirmation: "You must enter 'Password confirmation'."
-      missing_reset_password_token: "Reset password token is missing."
+      missing_reset_password_token: 'Reset password token is missing.'
       sent: 'An email has been already sent with reset password instructions.'
       updated: 'Your password has been successfully updated.'
+    confirmations:
+      sent: 'An email has been already sent to confirm your email address.'
+      confirmed: 'Your email address has been successfully confirmed.'
+      missing_confirmation_token: 'Confirmation token is missing.'
