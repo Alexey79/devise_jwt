@@ -28,9 +28,3 @@ Devise.add_module(:jwt_authenticatable, {
     controller: :sessions,
     model: 'devise/models/jwt_authenticatable'
 })
-
-Devise.add_module(:jwt_refreshable, {
-    route: :refresh_token,
-    controller: :refresh_token,
-    model: 'devise/models/jwt_refreshable'
-})
