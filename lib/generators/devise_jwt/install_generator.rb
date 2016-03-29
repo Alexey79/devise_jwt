@@ -8,23 +8,11 @@ module DeviseJwt
     argument :resource_class, type: :string, default: 'User'
 
     def create_initializer_file
-      copy_file 'devise_jwt.rb', 'config/initializers/devise_jwt.rb'
-    end
-
-    def copy_initializer_file
-    #   TODO
+      copy_file 'initializers/devise_jwt.rb', 'config/initializers/devise_jwt.rb'
     end
 
     def copy_locale
       copy_file '../../../../config/locales/en.yml', 'config/locales/devise_jwt.en.yml'
     end
-
-    # def copy_migrations
-    # #   TODO
-    # end
-    #
-    # def create_user_model
-    # #   TODO
-    # end
   end
 end
