@@ -11,4 +11,3 @@ class DeviseJwtController < DeviseController
     end.flatten
   end
 end
-

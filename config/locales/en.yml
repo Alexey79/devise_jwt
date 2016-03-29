@@ -9,3 +9,10 @@ en:
       signed_out: 'You has been successfully signed out.'
     registrations:
       destroyed: 'Your account has been successfully destroyed.'
+    passwords:
+      missing_email: 'You must enter email address.'
+      missing_password: "You must enter 'Password'."
+      missing_password_confirmation: "You must enter 'Password confirmation'."
+      missing_reset_password_token: "Reset password token is missing."
+      sent: 'An email has been already sent with reset password instructions.'
+      updated: 'Your password has been successfully updated.'
