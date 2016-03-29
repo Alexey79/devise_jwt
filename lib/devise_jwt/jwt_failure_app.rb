@@ -14,12 +14,19 @@ module DeviseJwt
       return i18n_message unless request_format
       method = "to_#{request_format}"
       if method == 'to_xml'
-        { messsage: i18n_message }.to_xml(root: 'errors')
+        {messsage: i18n_message}.to_xml(root: 'errors')
       elsif {}.respond_to?(method)
-        {status: :error, errors: [{messsage: i18n_message}]}.send(method)
+        {status: :error, errors: [{id: warden.message, messsage: i18n_message}]}.send(method)
       else
         i18n_message
       end
+    end
+
+    protected
+
+    def i18n_options(options)
+      options[:scope] = 'devise_jwt.failure'
+      options
     end
 
     private
