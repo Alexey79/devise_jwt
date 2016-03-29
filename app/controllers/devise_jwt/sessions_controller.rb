@@ -10,16 +10,16 @@ class DeviseJwt::SessionsController < DeviseJwtController
     sign_in(resource_name, self.resource)
     yield resource if block_given?
 
-    render json: {status: :success, data: resource_data, auth_token: self.resource.jwt_token}, location: after_sign_in_path_for(self.resource)
+    render json: {status: :success, data: resource_data, auth_token: self.resource.jwt_token}
   end
 
   def destroy
     signed_out = warden.authenticate!(scope: resource_name) && sign_out(resource_name)
     if signed_out
       yield if block_given?
-      render json: {status: :success, message: I18n.t('devise.sessions.signed_out')}, status: :ok
+      render json: {status: :success, message: I18n.t('devise_jwt.sessions.signed_out')}, status: :ok
     else
-      render json: {status: :error, errors: [{messsage: I18n.t('devise.failure.invalid_token')}]}, status: :not_found
+      render json: {status: :error, errors: [{messsage: I18n.t('devise_jwt.failure.invalid_token')}]}, status: :not_found
     end
   end
 end
