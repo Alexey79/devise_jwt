@@ -10,7 +10,7 @@ class DeviseJwt::SessionsController < DeviseJwtController
     sign_in(resource_name, self.resource)
     yield resource if block_given?
 
-    render json: {status: :success, data: resource_data, auth_token: self.resource.jwt_token}
+    render json: {status: :success, data: resource_data, auth_token: self.resource.generate_token}
   end
 
   def destroy

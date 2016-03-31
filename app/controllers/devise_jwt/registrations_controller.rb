@@ -9,7 +9,7 @@ class DeviseJwt::RegistrationsController < DeviseJwtController
     if resource.save
       sign_in(resource_name, self.resource)
 
-      render json: {status: :success, data: resource_data, auth_token: self.resource.jwt_token}, status: :created
+      render json: {status: :success, data: resource_data, auth_token: self.resource.generate_token}, status: :created
     else
       render json: {status: :error, errors: resource_errors}, status: :unprocessable_entity
     end

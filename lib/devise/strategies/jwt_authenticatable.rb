@@ -11,7 +11,7 @@ module Devise
       def authenticate!
         begin
           pay_load = decode(request.headers['Authorization'].split(' ').last)
-          resource = mapping.to.find_by(id: pay_load.fetch('sub'))
+          resource = mapping.to.find_by_id(pay_load.fetch('sub'))
           success! resource if validate(resource) { true }
         rescue JWT::ExpiredSignature
           fail(:expired_token)
@@ -28,7 +28,7 @@ module Devise
       private
 
       def decode(jwt)
-        JWT.decode(jwt, DeviseJwt.secret).first
+        JWT.decode(jwt, DeviseJwt.public_key).first
       end
     end
   end
