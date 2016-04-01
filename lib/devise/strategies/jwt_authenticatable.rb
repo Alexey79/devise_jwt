@@ -28,7 +28,9 @@ module Devise
       private
 
       def decode(jwt)
-        JWT.decode(jwt, DeviseJwt.public_key).first
+        private_key = DeviseJwt.secret_key
+        public_key = private_key.respond_to?(:public_key) && private_key.public_key || private_key
+        JWT.decode(jwt, public_key).first
       end
     end
   end

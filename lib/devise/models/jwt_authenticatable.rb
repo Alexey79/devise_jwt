@@ -15,7 +15,7 @@ module Devise
       end
 
       def encode(pay_load)
-        JWT.encode(pay_load, DeviseJwt.private_key, DeviseJwt.algorithm)
+        JWT.encode(pay_load, DeviseJwt.secret_key, DeviseJwt.algorithm)
       end
 
       def generate_token
